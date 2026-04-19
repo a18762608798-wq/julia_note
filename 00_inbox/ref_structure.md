@@ -27,6 +27,7 @@ Julia-Notes/
 │   └── Notes_on_Design.md
 ├── 03_Standard_Library/
 │   ├── Random.md
+│   ├── Statistics/
 │   ├── Statistics.md
 │   ├── LinearAlgebra.md
 │   ├── Dates.md
@@ -41,7 +42,6 @@ Julia-Notes/
 │   └── Registries_and_Compat.md
 ├── 05_Packages/
 │   ├── Data/
-│   ├── Statistics/
 │   ├── Machine_Learning/
 │   ├── Optimization/
 │   ├── Visualization/

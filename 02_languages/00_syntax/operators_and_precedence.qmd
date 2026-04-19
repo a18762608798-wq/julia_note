@@ -13,11 +13,40 @@ julia:
 ## arithmetic operators
 
 ```{julia}
+# binary operator
 var1 = 2.1;
 var2 = 1.0;
-int_divide_val = var1 ÷ var2 # (\div + tab) 除法结果只取整数, 但是保留类型. 
-inverse_divide_val = var1 \ var2 # var2 / var1
-rem_val = var1 % var2 # reminder of var1 / var2
+var1 ÷ var2 # (\div + tab) 除法结果只取整数, 但是保留类型. 
+var1 \ var2 # var2 / var1
+var1 % var2 # reminder of var1 / var2
+div(var1, var2) # solve the division
+mod(var1, var2) # solve the modulo
+```
+
+```{julia}
+# unary operator, round off
+var1 = -1.1;
+round(var1)
+floor(var1)
+ceil(var1)
+trunc(var1)  # 去尾
+```
+
+```{julia}
+# unary operator, math operation
+var = 2;
+println("复数优先级高于其他运算符: ", 2var/5im)
+abs(var)
+abs2(var)  # 平方
+sign(var)
+cbrt(var) # 三次根
+log(2, var)  # log2(x)
+cos(var)
+exp(var)
+sqrt(var)
+real(var)
+imag(var)
+angle(var)
 ```
 
 ## comparison operators

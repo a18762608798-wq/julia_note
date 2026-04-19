@@ -1,0 +1,73 @@
+---
+title: "essential macro"
+format: html
+engine: julia
+execute:
+  daemon: false
+julia:
+  exeflags: ["--project=.@"]
+---
+
+# essential macro
+
+## debug
+
+```{julia}
+@show sum([1, 2]);
+```
+
+## performance measurement
+
+```{julia}
+@time sum(rand(1000)); # return the time and the memory allocation(the times and totally KiB).
+@elapsed sum(rand(1000)); # only return the time.
+@allocated sum(rand(1000)); # only return the memory allocation(totally bytes).
+```
+
+```{julia}
+using BenchmarkTools 
+@benchmark sum(rand(1000))
+```
+
+## performance optimization
+
+```{julia}
+A = [1, 2]
+@inbounds A[1] # jump the bounds checking.
+@simd for i in 1:length(A) # vectorization.
+    A[i] += 1
+end
+@fastmath 1. * 1. # relaxed the precision. 
+g(x) = x
+@inline f(x) = g(x) + 1 # inline funtion or not.
+f(1);
+```
+
+## parallelism / multithreading
+
+```{julia}
+# multithreading
+using Base.Threads
+Threads.nthreads() # the number of threads.
+@elapsed @threads for i in 1:4
+    sleep(1)
+end
+```
+
+```{julia}
+# asynchronous functions
+t = @spawn begin
+    sleep(2)
+    42
+end
+
+println("before fetch")
+x = fetch(t) # wait util the result has been calculated.
+println(x)
+```
+
+## scope
+
+```{julia}
+@__FILE__ # it works only in julia file insteads of repl.
+```

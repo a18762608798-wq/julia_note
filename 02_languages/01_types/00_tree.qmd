@@ -1,0 +1,85 @@
+---
+title: "tree"
+format: html
+engine: julia
+execute:
+  daemon: false
+julia:
+  exeflags: ["--project=.@"]
+---
+
+# tree
+
+## basic structure
+
+```{bash}
+Any
+├─ Built-in types
+│   ├─ abstract type
+│   │  ├─ Number
+│   │   ├─ Complex
+│   │   └─ Real
+│   │       ├─ AbstractFloat
+│   │       │  ├─ Float16
+│   │       │  ├─ Float32
+│   │       │  ├─ Float64
+│   │       │  └─ BigFloat
+│   │       ├─ Integer
+│   │       │  ├─ Bool
+│   │       │  ├─ Signed
+│   │       │  │  ├─ Int8 / Int16 / Int32 / Int64 / Int128 / BigInt
+│   │       │  └─ Unsigned
+│   │       │     ├─ UInt8 / UInt16 / UInt32 / UInt64 / UInt128
+│   │       ├─ Rational
+│   │       └─ AbstractIrrational
+│   │  ├─ AbstractString
+│   │  ├─ AbstractArray{T,N}
+│   │  └─ ...
+├─ Custom type
+```
+
+## built-in types
+
+```{julia}
+x = 1
+typeof(x) # which return the specific type of x, in this case, it is Int64, which is a subtype of Integer,
+x isa Int64 # judge whether x is an instance of Int64.
+Int64 <: Signed # judge whether Int64 is a subtype of Signed.
+```
+
+## custom type
+
+```{julia}
+# immutable struct.
+struct Person
+    name::String
+    age::Int
+end
+
+p = Person("Tom", 20)
+p.age = 21   # which is error, you can not change the value of age, because it is immutable.
+```
+
+```{julia}
+# mutable struct.
+mutable struct Person
+    name::String
+    age::Int
+end
+
+p = Person("Tom", 20)
+p.age = 21   # 可以
+println(p.age)   # 21
+```
+
+```{julia}
+# abstract type is to difine a abstract classification, containing some structs or other abstract types.
+# it can not be instantiated to store specific data.
+abstract type Animal end
+
+struct Dog <: Animal
+    name::String
+end
+
+d = Dog("Bob")
+```

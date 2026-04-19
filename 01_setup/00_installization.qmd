@@ -1,3 +1,13 @@
+---
+title: "naming"
+format: html
+engine: julia
+execute:
+  daemon: false
+julia:
+  exeflags: ["--project=.@"]
+---
+
 # installization
 
 ## the installization of julia
@@ -32,3 +42,9 @@ rm -rf ~/.local/share/julia
 ### the installization in windows
 
 Simply download the exe file.
+
+## other config
+
+### multithreading
+
+add `export JULIA_NUM_THREADS=4` in `~/.profile` 

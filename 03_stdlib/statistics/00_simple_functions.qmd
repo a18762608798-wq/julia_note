@@ -1,0 +1,17 @@
+---
+title: "simple functions"
+format: html
+engine: julia
+execute:
+  daemon: false
+julia:
+  exeflags: ["--project=.@"]
+---
+
+# simple functions
+
+```{julia}
+import Statistics: mean
+matrix = [1, 2, 3, 4, 5, 6]
+mean(matrix)  # only function to 1 dim vector
+```
