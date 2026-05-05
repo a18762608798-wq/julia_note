@@ -1,10 +1,4 @@
-# 忽略所有 .log 文件
 *.log
-
-# 忽略所有 .tmp 文件，但保留 docs/ 下的
 *.tmp
-
-# 忽略以点开头的隐藏文件
-.*.swp
-.DS_Store
-Thumbs.db
+.CondaPkg/
+.obsidian/

@@ -16,6 +16,8 @@ julia:
 
 ## Function
 
+### description
+
 * All the function should be writen into function
 * Place the type transformation outside the function.
 * It is no need to restrict excessively on parameter types, which usually do not lead to performance improvement.
@@ -35,7 +37,7 @@ julia:
 10. 关键字参数: 默认参数
 ```
 
-* the doc of funtion
+### the doc of funtion
 
 ```{text}
 开头先放函数签名。
@@ -51,9 +53,9 @@ julia:
 """
     add_offset(x; offset=1) # the sign of function
 
-Return `x + offset`. # the imperative sentence
+Return `x + offset`. # a imperative sentence
 
-# Arguments
+# Arguments(struct prefer Fields)
 - `x`: Input number.
 - `offset=1`: Value added to `x`.
 
@@ -81,4 +83,18 @@ if / while 条件 不用额外括号。
 避免 type piracy：不要在“不是你定义的函数 + 不是你定义的类型”上乱扩展方法。
 类型判断通常优先用 isa 和 <:，而不是 ==。
 不要写平凡匿名函数 x -> f(x)，直接传 f 即可。
+```
+
+### braket to write params
+
+Strictly accroding to the layers use tab. For instance,
+
+```{julia}
+function func(
+    x,
+    y,
+    z,
+)
+    print(x + y + z)
+end
 ```

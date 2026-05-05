@@ -34,7 +34,6 @@ Pkg.add("LanguageServer")
 We recommend to use the pyjulia package **with the activate environment** in the mixed project with python and julia.
 
 ```bash
-```bash
 using CondaPkg
 CondaPkg.add("numpy")
 ```
