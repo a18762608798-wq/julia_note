@@ -21,6 +21,13 @@ print("the default type of integer is $(γ)")
 println(Base.active_project())
 ```
 
+## operation
+
+```{julia}
+isodd(1)
+iseven(1)
+```
+
 ## special number system
 
 ```{julia}

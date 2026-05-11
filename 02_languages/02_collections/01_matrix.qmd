@@ -14,11 +14,14 @@ julia:
 
 ```{julia}
 # vector
-vec1 = [1, 2]
+Vector{Int64}()
+Vector{Int64}(undef, 10) # Better than push if you have known the length of the vector.
+jec1 = [1, 2]
 vec2 = Vector(1:10)
 ```
 
 ```{julia}
+# mqtrix
 matrix1 = [1 2 3; 4 5 6; 7 8 9] # no , no []
 matrix2 = ones(3, 3)
 matrix3 = zeros(3, 3)
@@ -44,7 +47,7 @@ reshape(cap_c, 3, 4) # arrange in order by column.
 println("矩阵维度：$(size(cap_a))， 矩阵阶数: $(ndims(cap_a))，元素数目：$(length(cap_a))")
 var1 = [1, 2]
 println("vec1增加元素，要求同类型。$(push!(vec1, 8, 8))")
-println("vec1增加vector，要求同类型。$(append!(vec1, [9, 9]))")
+println("vec1增加vector(only the elements)，要求同类型。$(append!(vec1, [9, 9]))")
 println("vec1前面添加vector，要求同类型。$(prepend!(vec1, [0, 0]))")
 [[1 2], [3 4]] # Horizontal joining
 [[1 2]; [3 4]] # vertically joining

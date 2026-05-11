@@ -51,7 +51,7 @@ f(1);
 # multithreading
 using Base.Threads
 Threads.nthreads() # the number of threads.
-@elapsed @threads for i in 1:4
+@elapsed @threads for i in 1:4 # return time used.
     sleep(1)
 end
 ```

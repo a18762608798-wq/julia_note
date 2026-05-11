@@ -102,7 +102,7 @@ d = Dog("Bob")
 ```{julia}
 struct Cat <: Animal
     name::String
-    function Cat(name::String)
+    function Cat(name::String) # NOTE: the usage of assert must be binding with constructor
         return new(name)
     end
 
@@ -123,4 +123,6 @@ c = Cat('c')
 # default documentation will only display the fundamental info.
 @doc Cat
 fieldnames(typeof(c))
+using InteractiveUtils
+@which Cat('c')
 ```
