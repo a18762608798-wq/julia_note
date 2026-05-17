@@ -122,6 +122,8 @@ c = Cat('c')
 # the arguments of different methods must be writen by youself.
 # default documentation will only display the fundamental info.
 @doc Cat
+subtypes(Animal)
+supertype(Cat)
 fieldnames(typeof(c))
 using InteractiveUtils
 @which Cat('c')

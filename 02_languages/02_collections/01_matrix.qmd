@@ -1,5 +1,4 @@
 ---
-title: "tuple"
 format: html
 engine: julia
 execute:

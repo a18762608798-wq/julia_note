@@ -43,6 +43,10 @@ end
 g(x) = x
 @inline f(x) = g(x) + 1 # inline funtion or not.
 f(1);
+using ProgressMeter
+@showprogress "Processing..." for i in 1:100
+    sleep(0.1)
+end
 ```
 
 ## parallelism / multithreading

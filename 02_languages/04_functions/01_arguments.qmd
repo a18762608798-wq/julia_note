@@ -1,0 +1,21 @@
+---
+format: html
+engine: julia
+execute:
+  daemon: false
+julia:
+  exeflags: ["--project=.@"]
+---
+
+# arguments
+
+```{julia}
+function f(x::Union{Int, Nothing})
+    if x === nothing
+        return 0
+    else
+        return x + 1
+    end
+end
+
+```
