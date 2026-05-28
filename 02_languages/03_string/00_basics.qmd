@@ -17,6 +17,7 @@ str = 'a'
 aciistr = Int(str) # return the aciistr.
 println("Acii码: ", Int(str))
 println("字符", Char(aciistr))
+println("number to string", string(1))
 ```
 
 ```{julia}

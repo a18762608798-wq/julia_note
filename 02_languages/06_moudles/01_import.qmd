@@ -22,7 +22,9 @@ mydog = Dog("Buddy", "Golden Retriever")
 
 ```{julia}
 # using
-include("./02_languages/moudles/99_TestModule.jl") # it is similar as copy the code in front.
+# NOTE: Module been included twice and used will be error.
+include("./02_languages/06_moudles/99_TestModule.jl") # it is similar as copy the code in front.
 using .AnimalKingdom # which import the moudle and the exportings.
 mydog = Dog("Buddy", "Golden Retriever")
 ```
+

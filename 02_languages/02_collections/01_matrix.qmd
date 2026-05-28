@@ -15,13 +15,16 @@ julia:
 # vector
 Vector{Int64}()
 Vector{Int64}(undef, 10) # Better than push if you have known the length of the vector.
-jec1 = [1, 2]
+vec1 = [1, 2]
 vec2 = Vector(1:10)
+fill(1, 10)
 ```
 
 ```{julia}
-# mqtrix
-matrix1 = [1 2 3; 4 5 6; 7 8 9] # no , no []
+# matrix
+Matrix{Int64}(undef, 2, 3) 
+matrix1 = [1 2 3; 4 5 6] # no , no []
+matrix1[2, 3] # normal index
 matrix2 = ones(3, 3)
 matrix3 = zeros(3, 3)
 ```
@@ -55,6 +58,7 @@ println("vec1前面添加vector，要求同类型。$(prepend!(vec1, [0, 0]))")
 ### math operations
 
 ```{julia}
+using Statistics
 # broadcasting computation.
 var1 = [1, 2];
 var2 = [3, 4];
@@ -62,6 +66,10 @@ sin.(var1); var1.^2
 var1 .* var2 
 var1' * var2 # A' is the transpose of A.
 matrix2 * matrix3
+matrix1 = [1 2 3; 4 5 6] # no , no []
+mean(var1)
+mean(matrix1, dims=1) # mean to the first dim
+mean(matrix1, dims=(1, 2))
 ```
 
 ### other operations

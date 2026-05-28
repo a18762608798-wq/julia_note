@@ -1,5 +1,4 @@
 ---
-title: "naming"
 format: html
 engine: julia
 execute:
@@ -36,6 +35,14 @@ We recommend to use the pyjulia package **with the activate environment** in the
 ```bash
 using CondaPkg
 CondaPkg.add("numpy")
+CondaPkg.add_pip("quarkstudio") # NOTE: quarkstudio does not included in conda, use PYPI.
+```
+
+If you clone a project of orders, run:
+
+```{julia}
+using CondaPkg
+CondaPkg.resolve()
 ```
 
 ## usage
