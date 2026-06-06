@@ -1,4 +1,7 @@
-*.log
-*.tmp
-.CondaPkg/
 .obsidian/
+.CondaPkg/
+*.tmp
+*.npz
+*.ipynb
+undergraduate_courses/
+copilot/

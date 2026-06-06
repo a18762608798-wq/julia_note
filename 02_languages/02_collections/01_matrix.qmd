@@ -29,17 +29,18 @@ matrix2 = ones(3, 3)
 matrix3 = zeros(3, 3)
 ```
 
+
 ## operations
 
 ### format operations
 
 ```{julia}
 # copy
-cap_a = repeat(vec1, 2, 3) 
-cap_b = cap_a # shallow copy
-cap_c = deepcopy(cap_a) # deep copy
-cap_a[1, 1] = 0; 
-isequal(cap_b, cap_c)
+vec1 = [1, 2]
+vec2 = vec1 # shallowcopy()
+vec3 = copy(vec1) # deepcopy
+vec4 = vec1[1:2] # deepcopy, which is diff with julia.
+vec5 = @view vec1[1:2] # shallowcopy()
 ```
 
 ```{julia}
