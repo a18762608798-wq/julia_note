@@ -47,6 +47,7 @@ vec5 = @view vec1[1:2] # shallowcopy()
 # shape 
 cap_a = repeat(vec1, 2, 3) # A = [1 1 1; 1 1 1] \otimes vec1
 reshape(cap_c, 3, 4) # arrange in order by column.
+vec([1 2 3 4]) # transform matrix to vec.
 println("矩阵维度：$(size(cap_a))， 矩阵阶数: $(ndims(cap_a))，元素数目：$(length(cap_a))")
 size(cap_a, 1)
 var1 = [1, 2]

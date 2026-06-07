@@ -47,6 +47,7 @@ sqrt(var)
 real(var)
 imag(var)
 angle(var)
+binomial(10, 2) # C_10^2
 ```
 
 ## comparison operators

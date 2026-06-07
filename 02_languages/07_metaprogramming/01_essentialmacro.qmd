@@ -54,6 +54,7 @@ end
 
 ```{julia}
 # multithreading
+# NOTE: 必须避免多个线程同时修改同一个内存位置.
 using Base.Threads
 Threads.nthreads() # the number of threads.
 @elapsed @threads for i in 1:4 # return time used.
