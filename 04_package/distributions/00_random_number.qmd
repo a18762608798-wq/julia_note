@@ -1,5 +1,4 @@
 ---
-title: "random number"
 format: html
 engine: julia
 execute:

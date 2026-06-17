@@ -14,4 +14,7 @@ julia:
 tuple = (1, 2, 3)
 vartuple = (a=1, b=2, c=3)
 println("变量元组a=$(vartuple.a), length is $(length(vartuple))")
+
+qubit_dims = ntuple(_ -> 2, 2)
 ```
+

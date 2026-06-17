@@ -12,7 +12,7 @@ julia:
 ## methods with diff types
 
 ```{julia}
-# Abstract types
+# NOTE: Abstract types could be used directly
 function f1(x::AbstractFloat)
     return x + 1
 end
